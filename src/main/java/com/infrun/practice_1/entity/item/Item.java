@@ -1,4 +1,4 @@
-package com.infrun.practice_1.entity;
+package com.infrun.practice_1.entity.item;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,6 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+// 연관관계 매핑
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Item {
 
     @Id

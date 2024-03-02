@@ -1,5 +1,6 @@
 package com.infrun.practice_1.entity;
 
+import com.infrun.practice_1.entity.item.Item;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
