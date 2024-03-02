@@ -1,10 +1,13 @@
-package com.infrun.practice_1.entity;
+package com.infrun.practice_1.entity.member;
 
+import com.infrun.practice_1.entity.Order;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +24,25 @@ public class Member {
     @Column(name = "NAME", nullable = false)
     private String name;
 
-    @Column(name = "CITY", nullable = false)
-    private String city;
 
-    @Column(name = "STREET", nullable = false)
-    private String street;
+    @Embedded
+    private Address address;
+//    @Column(name = "STARTDATE", nullable = false)
+//    private LocalDateTime startDate;
+//
+//    @Column(name = "ENDDATE", nullable = false)
+//    private LocalDateTime endDate;
+    @Embedded
+    private WorkPeriod workPeriod;
 
-    @Column(name = "ZIPCODE", nullable = false)
-    private String zipcode;
+//    @Column(name = "CITY", nullable = false)
+//    private String city;
+//
+//    @Column(name = "STREET", nullable = false)
+//    private String street;
+//
+//    @Column(name = "ZIPCODE", nullable = false)
+//    private String zipcode;
 
     // 연관관계 설정
     // mappedBy는 테이블과 매핑하는게 아닌 그냥 순수 객체의 관계 설정이기 때문에
